@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Task 30</title>
+</head>
+<style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: sans-serif;
+}
+/* #333333333333 copy ##################### */
+
+/* ############## utitlity classes #############3 */
+ .container{
+    max-width: 1130px;
+    width: 100%;
+    margin: 0 auto;
+ }
+ .navbar input[type="checkbox"],
+ .navbar .hamburger-lines{
+    display: none;
+ }
+
+ .navbar-container{
+    display: grid;
+    justify-content: space-between;
+    height: 64px;
+    align-items: center;
+ }
+ .menu-item{
+    display: flex;
+    margin: auto; 
+ }
+ .menu-item li{
+    list-style: none;
+    margin-left: 1.5rem;
+    font-size: 2rem;
+ }
+ .menu-item span{
+   position: relative;
+   left: 300px;
+ }
+ .sec1{
+    background-image: url(./image.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 500px;
+ }
+ .heading1{
+   padding-left: 20px;
+    font-size: 90px;
+    font-family: 'Bitter', serif;
+ }
+ i{
+    -webkit-text-stroke-width: 3px;
+     -webkit-text-stroke-color: black;
+     font-size: 24px;
+
+ }
+ .sec3{
+    background-image: url(./background\ image.jpg);
+    background-repeat: repeat;
+ }
+ .sec3 .heading1{
+   position: relative;
+   left: 5%;
+ }
+ .sec5{
+   background-image: url(./image_3.jpg);
+   height: 500px;
+   width: 100%;
+   opacity: 0.8;
+   color: black;
+   font-size: 18px;
+   background-size: cover;
+    background-position: center;
+}
+.form5{
+   background-color: lightgray;
+padding:30px 50px;
+}
+.form5 span a{
+   display: inline-block;
+   width: 100%;
+   text-align: center;
+   padding-top: 10px;
+}
+
+
+#myCarousel .left{
+   width: auto;
+}
+#myCarousel .right{
+   width: auto;
+}
+
+/* ################## media queries ##################### */
+@media screen and (max-width: 576px) and (min-width: 320px){
+   .navbar{
+      opacity: 0.95;
+
+   }
+   .navbar-container input[type="checkbox"],
+   .navbar-container .hamburger-lines{
+      display: block;
+   }
+   .navbar-container{
+      display: block;
+      position: relative;
+      height: 64px;
+   }
+   .navbar-container input[type="checkbox"]{
+      position: absolute;
+      display: block;
+      height: 32px;
+      width: 40px;
+      top: 9px;
+      right: 0px;
+      z-index: 5;
+      opacity: 0;
+   }
+   .navbar-container .hamburger-lines{
+      display: block;
+      height: 32px;
+      width: 40px;
+      top: 10px;
+      right: 10px;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: absolute;
+      right: 0;
+   }
+   
+   .navbar-container .hamburger-lines .line{
+      display: block;
+      height: 4px;
+      /* position: absolute; */
+      /* right: 1%; */
+      /* top: 40%; */
+      width: 100%;
+      border-radius: 10px;
+      background: #333333;
+   }
+   .navbar .menu-item{
+      /* padding-top: 100px; */
+      background: #fff;
+      color: #333333;
+      height: 100vh;
+      max-width: 300px;
+      transform: translateX(170%);
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      /* left: 100%; */
+      right: 0;
+      
+      top: 10%;
+      
+      /* margin-right: 0px; */
+      /* padding-left: 50px; */
+      transition: transform 0.5s ease-in-out;
+      box-shadow: 5px 0px 10px 0px #aaa;
+   }
+   .navbar .menu-item li{
+      font-size: 2rem;
+      font-weight: 500;
+      padding: 10px 30px;
+      
+      transition: transform 0.3s ease-in-out;
+   }
+   .navbar-container span a{
+      /* margin: 25px 25px; */
+   }
+   .navbar-container .hamburger-lines .line1{
+      transform-origin: 0% 0%;
+      transition: transform 0.4s ease-in-out;
+   }
+   .navbar-container .hamburger-lines .line2{
+      
+      transition: transform 0.4s ease-in-out;
+   }
+   .navbar-container .hamburger-lines .line3{
+      transform-origin: 0% 100%;
+      transition: transform 0.4s ease-in-out;
+   }
+  
+   .navbar-container span a:checked ~ .menu-item{
+      display: block;
+   }
+   .navbar-container input[type='checkbox']:checked ~ .menu-item{
+      transform: translateX(0);
+   }
+   .navbar-container input[type='checkbox']:checked ~ .hamburger-lines .line1{
+      transform: rotate(45deg);
+   }
+   .navbar-container input[type='checkbox']:checked ~ .hamburger-lines .line2{
+      transform: scaleY(0);
+   }
+   .navbar-container input[type='checkbox']:checked ~ .hamburger-lines .line3{
+      transform: rotate(-45deg);
+   }
+ 
+   
+.heading1{
+   display: flex;
+   font-size: 60px;
+   flex-direction: column;
+}
+.text1{
+   display: flex;
+   flex-direction: column;
+   /* padding-top: 30px; */
+}
+
+
+.card2{
+display: flex;
+flex-direction: column;
+/* padding-left: 60px; */
+width: 1100px;
+}
+.card2-1{
+   margin: 20px ;
+   padding: 10px;
+   flex-direction: column;
+}
+.card2-2{
+   margin: 20px 30px;
+   padding: 10px;
+   
+   flex-direction: column;
+}
+.card2-3{
+   margin: 20px 30px;
+   /* width: 500px; */
+   padding: 10px;
+   
+   flex-direction: column;
+   
+}
+.sec2 h3{
+   padding-top: 50px;
+}
+.sec3{
+   display: flex;
+   flex-direction: column;
+
+}
+.sec3 .heading1{
+   font-size: 30px;
+   padding: 0;
+   /* margin-right:30px ; */
+   /* margin: auto; */
+}
+.sec3 .card3{
+   display: flex;
+   flex-direction: column;
+   width: 1400px;
+   /* margin: 30px; */
+}
+.card3-1{
+   padding: 30px;
+   margin: 20px 0px;
+}
+.sec5{
+   height: 1200px;
+
+}
+.main-div5{
+   padding-top: 60px;
+}
+.sec6 .card6-1 p{
+   font-size: 30px;
+}
+.sec4{
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+}
+.parent-sec4{
+   width: 100%;
+   
+}
+
+
+.flex1{
+
+display: flex;
+flex-direction: column;
+/* padding-top: 30px; */
+}
+.sec1 span a{
+   position: relative;
+   top: 180px;
+   /* right: 50px; */
+   /* font-size: 20px; */
+   
+}
+.sec1 .ali{
+   margin-bottom:20px ;
+}
+.menu-item span{
+   position: relative;
+   left: 10%;
+   top: 3%;
+ }
+.sec2 .heading1{
+   font-size: 32px;
+      padding: 0px !important;
+}
+.card6-1 i{
+   position: relative;
+   top: 39px;
+}
+.card6-1 .icons5 i{
+   position: relative;
+   top: 2px;
+}
+.card6-1 .para{
+   font-size: 20px;
+}
+.carousel-item .row #aho{
+    
+    border: 1px solid black;
+}
+.parent-sec4 .khtam{
+    display: none;
+}
+}
+/* @media (orientation: landscape) and (max-height: 500px){
+   .navbar{
+      height: 50vmax;
+   }
+} */
+</style>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container container">
+            <input type="checkbox">
+            <div class="hamburger-lines">
+                <span class="line line1"></span>
+                <span class="line line2"></span>
+                <span class="line line3"></span>
+            </div>
+            <ul class="menu-item ">
+                <li ><a href="#sectoin1" class="text-dark">Home</a></li>
+                <li><a href="#section2" class="text-dark">About Us</a></li>
+                <li><a href="#section3" class="text-dark">Courses</a></li>
+                <li><a href="#section4" class="text-dark">Our Teachers</a></li>
+                <li><a href="#section6" class="text-dark">FAQ</a></li>
+            
+            <span>
+                <a href="#" class="bg-danger text-white px-4 py-3 rounded-pill">CONTACT NOW</a>
+            </span>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="sec1 d-flex align-self-center" id="section1">
+        <div class="container">
+            <div class="flex1 d-flex justify-content-around align-items-center align-self-center">
+                <div class="text1">
+                    <p class="heading1">Welcome to <br>Preschool</p>
+                    <div class="parent-sec1">
+                    <span class="ali">
+                        <a href="#" class="bg-white text-secondary px-5 py-3 rounded-pill">Learn More</a>
+                    </span>
+                    <span>
+                        <a href="#" class="bg-danger text-white px-5 py-3 mx-4 rounded-pill">Let's go!</a>
+                    </span>
+                </div>
+                </div>
+                <div class="card1 bg-white text-dark d-flex p-3" style="border-radius: 30px;">
+                    <i class="fa-solid fa-star py-5 px-2" style="color: green;"></i>
+                    <h3 class="px-3">Welcoming Place <br>For Every Child</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sec2 m-5 " id="section2">
+        <div class="container-fluid sec2-flex shadow-lg bg-white rounded py-4" >
+            <h3 class="heading1" style="font-weight: bold; padding-left: 90px;">Unique Learning <br>Environment</h3>
+            <div class="card2 row justify-content-around">
+                <div class="card2-1 col-3 p-5 d-flex" style="background-color: #fab6c6; border-radius:30px">
+                        <i class="fa-solid fa-star px-3 py-1" style="color: rgb(247, 118, 139);"></i>
+                    <div><p>Eget amet facilisi<br>pellentesque habitant<br>maecenas.</p>
+                        <h4>Expert Teachers</h4></div>
+                </div>
+                <div class="card2-2 col-3 p-5 d-flex" style="background-color: #a8d657; border-radius:30px">
+                        <i class="fa-solid fa-star px-2 py-1" style="color: lightblue;"></i>
+                   <div> <p>Nulla Iacus mi, interdum nec<br>nisl nec, vulputate egestas<br>ligula.</p>
+                    <h4>Children Sagety</h4></div>
+                </div>
+                <div class="card2-3 col-3 p-5 d-flex" style="background-color: #f5e74c; border-radius:30px">
+                    
+                        <i class="fa-solid fa-star px-2 py-1" style="color: brown; font-size: 25px;"></i>
+                        <div>
+                    <p>Aliquam vitae mi et augue <br>pellentesque sodales non sit<br>amet turpis.</p>
+                
+                    <h4>Cute Environment</h4>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sec3" id="sec3">
+        <div class="container-fluid p-5">
+            <div class="heading3">
+                <h1 class="heading1" style="font-weight: bold; 
+                font-family: 'Roboto Slab', serif;">Three easy steps <br>to successful future </h1>
+            </div>
+            <div class="card3 row justify-content-around">
+                <div class="card3-1 bg-white text-dark col-3" style="background-color: #fab6c6; border-radius:30px; padding-left: 60px; padding-top: 10px;">
+                    <i class="fa-solid fa-star" style="color: green;"></i>
+                    <h3 class="d-inline-block px-2">Basic</h3>
+                    <p>Morbi gravida lectures in vehicula <br>placerat. Phasellus eget magna leo.<br>Orci varius natoque penatibus et<br>magnis dis parturient montes,<br>nascetur ridiculus mus. Morbi a <br>euismod velit.</p>
+                    <span>
+                        <a href="#" class="bg-danger text-white" style="border-radius: 30px; display: inline-block; width: 80%; text-align: center; padding: 10px 0px;">ENROLL CHILD</a>
+                    </span>
+                </div>
+                <div class="card3-1 bg-white text-dark col-3" style="border-radius:30px; padding-left: 60px; padding-top: 10px;">
+                    <i class="fa-solid fa-star" style="color: green;"></i>
+                        <h3 class="d-inline-block px-2">Basic</h3>
+                    <p>Present semper arcu ut massa<br>eleifend sodales. Integer<br>vestibulum sapien et malesuada<br>convallis. Aenean hendrerit lorem<br>nec mauris rhoncus, in placerat<br>tellus tincidunt, Sed et faucibus<br>dui, vel congue erat.</p>
+                    
+                    <span>
+                        <a href="#" class="bg-danger text-white" style="border-radius: 30px; display: inline-block; width: 80%; text-align: center; padding: 10px 0px;">ENROLL CHILD</a>
+                    </span>
+                </div>
+                <div class="card3-1 col-3" style="border-radius:30px; background-color: white; padding: 30px 60px;">
+                    
+                        <i class="fa-solid fa-star" style="color: green;"></i>
+                        <h3 class="d-inline-block px-2">Basic</h3>
+                    
+                    <p >Suspendisse non diam nisl.<br>Vivamus vehicula dolor sit amet<br>augue malesuada porta. Phasellus<br>massa nibh, trisitique id eros vitae,<br>interdum suscipit ligula. Morbi<br>ante ligula, efficitur lobortis faucibus eu. </p>
+                    <span class="">
+                        <a href="#" class="bg-danger text-white" style="border-radius: 30px; display: inline-block; width: 90%; text-align: center; padding: 10px 0px;">ENROLL CHILD</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+   <div class="container-fluid p-5">
+    <h2 style="font-size: 40px; text-align:center; padding:30px 0px;">Oue Preschool Photo</h2>  
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators ol-list">
+        <li data-target="#myCarousel" data-slide-to="0" class="active bg-dark"></li>
+        <li data-target="#myCarousel" data-slide-to="1" class="bg-dark"></li>
+        
+      </ol>
+  
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+        <div class="carousel-item active" >
+            <div class="parent-sec4 row justify-content-around">
+            <div class="sec4-card1 text-dark col-2 shadow-lg" id="aho" style="background-color: rgb(184, 180, 180); border-radius:30px; padding: 30px; width: 20%;">
+                <div class="sec4-image" >
+                    <img src="./image.jpg" alt="" class="rounded-pill " style="width: 170px; height:170px;">
+                </div>
+                <h2>Ken Darling</h2>
+                <p>Music Teacher</p>
+            </div>
+            <div class="sec4-card1 text-dark col-2 shadow-lg khtam" style="background-color: rgb(184, 180, 180); border-radius:30px; padding: 30px; width: 20%;">
+                <div class="sec4-image" >
+                    <img src="./image.jpg" alt="" class="rounded-pill " style="width: 170px; height:170px;">
+                </div>
+                <h2>Ken Darling</h2>
+                <p>Music Teacher</p>
+            </div>
+            <div class="sec4-card1 text-dark col-2 shadow-lg khtam" style="background-color: rgb(184, 180, 180); border-radius:30px; padding: 30px; width: 20%;">
+                <div class="sec4-image" >
+                    <img src="./image.jpg" alt="" class="rounded-pill " style="width: 170px; height:170px;">
+                </div>
+                <h2>Ken Darling</h2>
+                <p>Music Teacher</p>
+            </div>
+            <div class="sec4-card1 text-dark col-2 shadow-lg khtam" style="background-color: rgb(184, 180, 180); border-radius:30px; padding: 30px; width: 20%;">
+                <div class="sec4-image" >
+                    <img src="./image.jpg" alt="" class="rounded-pill " style="width: 170px; height:170px;">
+                </div>
+                <h2>Ken Darling</h2>
+                <p>Music Teacher</p>
+            </div>
+            </div>
+        </div>
+        
+        <div class="carousel-item">
+            <div class="parent-sec4 row justify-content-around">
+            <div class="sec4-card1 text-dark col-2 shadow-lg" id="aho" style="background-color: rgb(184, 180, 180); border-radius:30px; padding: 30px; width: 20%;">
+                <div class="sec4-image" >
+                    <img src="./image.jpg" alt="" class="rounded-pill " style="width: 170px; height:170px;">
+                </div>
+                <h2>Ken Darling</h2>
+                <p>Music Teacher</p>
+            </div>
+            <div class="sec4-card1 text-dark col-2 shadow-lg khtam" style="background-color: rgb(184, 180, 180); border-radius:30px; padding: 30px; width: 20%;">
+                <div class="sec4-image" >
+                    <img src="./image.jpg" alt="" class="rounded-pill " style="width: 170px; height:170px;">
+                </div>
+                <h2>Ken Darling</h2>
+                <p>Music Teacher</p>
+            </div>
+            <div class="sec4-card1 text-dark col-2 shadow-lg khtam" style="background-color: rgb(184, 180, 180); border-radius:30px; padding: 30px; width: 20%;">
+                <div class="sec4-image" >
+                    <img src="./image.jpg" alt="" class="rounded-pill " style="width: 170px; height:170px;">
+                </div>
+                <h2>Ken Darling</h2>
+                <p>Music Teacher</p>
+            </div>
+            <div class="sec4-card1 text-dark col-2 shadow-lg khtam" style="background-color: rgb(184, 180, 180); border-radius:30px; padding: 30px;">
+                <div class="sec4-image" >
+                    <img src="./image.jpg" alt="" class="rounded-pill " style="width: 170px; height:170px;">
+                </div>
+                <h2>Ken Darling</h2>
+                <p>Music Teacher</p>
+            </div>
+            </div>
+        </div>
+      </div>
+  
+      <!-- Left and right controls -->
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+        <span class="sr-only"></span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+        <span class="sr-only"></span>
+      </a>
+      
+    </div>
+    <div class="icon" style="text-align: center; margin-top: 20px;">
+        <a href=""><i class=" fa-solid fa-arrow-left bg-danger rounded-pill p-3"></i></a>
+        <a href=""><i class="fa-solid fa-arrow-right bg-danger rounded-pill p-3"></i></a>
+        
+    </div>
+  </div>
+<div class="container-fluid p-5">
+    <h2 style="font-size: 40px; text-align:center; padding:30px 0px;">Oue Preschool Photo</h2>  
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1" ></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+        <li data-target="#myCarousel" data-slide-to="4"></li>
+        <li data-target="#myCarousel" data-slide-to="5"></li>
+        <li data-target="#myCarousel" data-slide-to="6"></li>
+      </ol>
+  
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src="./slider1.jpg" alt="Los Angeles" style="width:100%;">
+        </div>
+  
+        <div class="item">
+          <img src="./slider2.jpg" alt="Chicago" style="width:100%;">
+        </div>
+      
+        <div class="item">
+          <img src="./slider3.jpg" alt="New york" style="width:100%;">
+        </div>
+        <div class="item">
+          <img src="./slider1.jpg" alt="New york" style="width:100%;">
+        </div>
+        <div class="item">
+          <img src="./slider2.jpg" alt="New york" style="width:100%;">
+        </div>
+        <div class="item">
+          <img src="./slider3.jpg" alt="New york" style="width:100%;">
+        </div>
+        <div class="item">
+          <img src="./slider1.jpg" alt="New york" style="width:100%;">
+        </div>
+      </div>
+  
+      <!-- Left and right controls -->
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+        <span class="sr-only"></span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+        <span class="sr-only"></span>
+      </a>
+      
+    </div>
+    <div class="icon" style="text-align: center; margin-top: 20px;">
+        <a href=""><i class=" fa-solid fa-arrow-left bg-danger rounded-pill p-3"></i></a>
+        <a href=""><i class="fa-solid fa-arrow-right bg-danger rounded-pill p-3"></i></a>
+        
+    </div>
+  </div>
+  <div class="sec5 my-4" id="section5">
+    <div class="container">
+        <div class="main-div5 row justify-content-around align-items-center">
+            <div class="heading5" style="font-weight:bold;"> 
+                <h1>Enroll Now!</h1>
+                <p>Entry Requirements</p>
+                <p>Proin felis ligula, consectetur in lorem blandit, tristique<br>dictum elit. Curabitur hendrerit libero nunc, ut luctus eros<br>lacinia vel. Proin in purus sagittis, tempus dui in, tristique <br>sapien, Nullam et ipsum velit.</p>
+                
+                    <h1>Special Education Services</h1>
+                    <p>Maecenas dui tellus, aliquet vitae eros vitae, sodales<br>gravida orci.</p>
+                </div>
+                <div class="form5" style="border-radius: 30px; margin-top: 50px;">
+                    <h2 style="font-size: 50px;">Contact Us</h2>
+                    <label for="fname"></label>
+                    <input type="text" class="px-5 py-3" style="border-radius: 30px; border:none;" placeholder="Full Name" required>
+                    <br><br>
+                    <label for="fname"></label>
+                    <input type="number" class="px-5 py-3" style="border-radius: 30px; border:none;" placeholder="Phone" required>
+                    <p style="padding-top:20px;">Donec fermentum at leo quis efficitur.<br>Morbi sagittis lorem id sapien euismod, <br>eget venenatis quam scelerisque.</p>
+                    <span>
+                        
+                    
+                        <a href="#" class="bg-danger text-white" style="border-radius: 30px;">SEND</a>
+    
+                    </span>
+                </div>
+        </div>
+        <!-- <div class="flex5-1 row justify-content-between align-items-center">
+            
+            
+        </div> -->
+        </div>
+        
+    </div>
+    <div class="sec6" id="section6">
+        <div class="container sec6-maindiv">
+            <div class="heading6">
+                <h1 style="text-align: center;"> Fast Answer Question</h1>
+            </div><br>
+            <div class="card6-1 bg-white shadow-lg p-3 d-flex justify-content-between" style="border-radius: 30px;">
+                <p class="p-5" style="font-size: 20px;">Can I Pay the Registration Fee Online?</p>
+                <i class="fa-regular fa-plus p-5"></i>
+            </div><br>
+            <div class="card6-1 bg-white shadow-lg p-3 d-flex justify-content-between" style="border-radius: 30px;">
+                <p class="p-5" style="font-size: 20px;">Do I have to complete an Application from for each child?</p>
+                <i class="fa-regular fa-plus p-5"></i>
+            </div><br>
+            <div class="card6-1 bg-white shadow-lg p-3 d-flex justify-content-between" style="border-radius: 30px;">
+                <p class="p-5" style="font-size: 20px;">Can I contact the Admissions Office if I have any question?</p>
+                <i class="fa-regular fa-plus p-5"></i>
+            </div><br>
+            <div class="card6-1 bg-white shadow-lg p-3 d-flex justify-content-between" style="border-radius: 30px;">
+                <p class="p-5" style="font-size: 20px;">How do the preschools make their decisions?</p>
+                <i class="fa-regular fa-plus p-5"></i>
+            </div><br>
+            <div class="card6-1 bg-white shadow-lg p-3 d-flex justify-content-between" style="border-radius: 30px;">
+                <p class="p-5" style="font-size: 20px;">How will I know if my child has been accepted?</p>
+                <i class="fa-regular fa-plus p-5"></i>
+            </div><br>
+            <div class="card6-1 bg-white shadow-lg p-3 d-flex justify-content-between" style="border-radius: 30px;">
+                <p class="p-5" style="font-size: 20px;">Will I need to confirm that I accept a place if it is offered?</p>
+                <i class="fa-regular fa-plus p-5"></i>
+            </div><br>
+        </div>
+    </div>
+    <br><br><br><br>
+    <div class="container">
+    <div class="card6-1 shadow-lg d-flex justify-content-between" style="border-radius: 30px; margin-bottom: 30px; background-color: rgb(220, 217, 217);">
+        <div class="icons5 d-flex p-5">
+            <i class="fas fa-puzzle-piece"></i>
+            <p style="padding-left: 10px; font-size:20px">Preschool</p>
+        </div>
+       <p class="para" style="padding:30px; font-size: 20px;">Quisque imperdiet mauris quis dui laoreet.</p>
+    </div>
+</div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
